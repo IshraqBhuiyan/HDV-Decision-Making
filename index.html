@@ -57,23 +57,23 @@
         <img src="images/airportSnow.jpg" height="300" />
       </center>
       Heavy snow temporarily closed the airport, but now it's finally open again.
-      I really want to get out of this frozen hell and be back under the warm Florida Sun.
-      I haven't seen my family in so long too. I'd really like to get back as fast as possible.
-      Well, it's time to <turn to="cockpit">go</turn> to my airplane.
+      You really want to get out of this frozen hell and be back under the warm Florida Sun.
+      You haven't seen your family in so long too. You'd really like to get back as fast as possible.
+      It's time to <turn to="cockpit">board</turn> your airplane.
 
     </page>
 
     <page id="cockpit">
       <center><img src="images/737Cockpit.jpg" height="250"></img></center>
-      I arrive in the cockpit of the Boeing 737 assigned to you with my copilot.<br>
-      I begin the preflight <show paragraph="checks">checks</show>.
+      You arrive in the cockpit of the Boeing 737 assigned to you with your copilot.<br>
+      You begin the preflight <show paragraph="checks">checkist</show>.
 
       <paragraph id="checks">
-        Me: Engines?<br>
+        You: Engines?<br>
         Copilot: Check.<br>
-        Me: Fuel?<br />
+        You: Fuel?<br />
         Copilot: Check.<br />
-        Me: Tire Pressure?<br />
+        You: Tire Pressure?<br />
         Copilot: Check.<br /><br />
         Have they <show paragraph="deicing">deiced</show> the plane yet?
       </paragraph>
@@ -81,16 +81,159 @@
       <paragraph id="deicing">
         It seems that the airport deicing crew is tending to it right now. It should be done within 15 to 20 minutes.
         <br /><br />
-        The weather outside is gradually worsening. If we don't take off soon, we may get grounded again.
-        I really want to get back to Florida and have some time with my family before my next flight.
-        I rarely see them nowadays. The passengers are also extremely tired and anxious.
-        I don't want to be the one telling them we can't take off and then listen to their complaints.
+        The weather outside is gradually worsening. If you don't take off soon, you may very well get grounded again.
+        you really want to get back to Florida and have some time with my family before your next flight.
+        You rarely see them nowadays because of the back to back flights. The passengers are also extremely tired and anxious.
+        You don't want to be the one telling them you can't take off and then deal with their complaints.
+        <br /><turn to="taxi">After some time the plane is deiced.</turn>
 
 
       </paragraph>
 
 
 
+    </page>
+
+    <page id="taxi">
+      <center>
+        <img src="images/taxi.jpg" height="200" />
+      </center>
+      <p>
+        Air traffic control has given you the clearance to taxi to the runway.
+        Unfortunately, because of weather conditions and cleanup, only one runway is open.
+        Ahead of you there are many other planes waiting to take off.
+        It will take a while to get clearance for takeoff.
+      </p>
+
+      <p>
+        After 40 minutes of waiting, you copilot turns to you and says,<br />
+        "Hey Cap, that sure is a lot of snow and ice that's built up on our wings.
+        You sure you don't want to turn back for another deicing?"<br />
+      </p>
+
+      <p>
+        Looking at the wings, you see that there is indeed snow piled up on the wings,
+        and according to standard procedure, you should be turning back for a deicing in
+        order to ensure the snow doesn't affect the lift the wings give.
+      </p>
+
+      <p>
+        You can let Air Traffic Control know and turn back to deice, which is standard procedure and the safest option.
+        But you also really want to get out of here ASAP. The sooner you take off, the sooner you can
+        fly above the storm clouds and not worry about this crappy weather anymore. The snow on the wings
+        is a problem, but perhaps a deicing isn't necessary to melt it. There's another jet in front of you,
+        and if you go a little closer to it, the heat from its jet engines should melt the snow on your wings, right?
+        This isn't standard procedure, but it may just work. Also, the passengers are getting more and more frustrated
+        the more time it takes to get into the air. The faster you get in the air, the less likely you are to deal with them.
+        Angry passengers are truly frightening, after all!<br />
+        So what do you do: Do you follow standard procedure and <show paragraph="turnback" id="besafe">turn back</show> for
+        a deicing, or do you try to use the heat from the jet in front of you to deice and <show paragraph="continue" id="bedumb">continue</show>?
+      </p>
+
+      <paragraph id="turnback">
+        {{story.disable('bedumb');}}
+        {{story.disable('besafe');}}
+        You notify air traffic control that you need another deicing and turn your airplane back around.
+        <turn to="goodEnding">Next</turn>
+      </paragraph>
+
+      <paragraph id="continue">
+        {{story.disable('bedumb');}}
+        {{story.disable('besafe');}}
+        You maneuver your plane a little closer to the jet in front of you, in hopes of using its heat to melt the snow.
+        You wait in queue to take off from the runway as you do this.
+        <turn to="takeoff">Next</turn>
+      </paragraph>
+
+    </page>
+
+    <page id="takeoff">
+      <center>
+        <img src="images/takeoffSnow.jpg" height="250" />
+      </center>
+      <p>
+        Finally, you have clearance to take off from Air Traffic Control.<br />
+        You ready for takeoff. You tell your copilot to push the throttle with you.<br />
+        You hear the engines whine as they spool up and the plane lurches forward, gaining speed.<br />
+        Looking at the instrument panel, your copilot says,<br />
+        "Oh god, this doesn't look right."<br />
+        Expecting nothing, you glance the panel from the corner of your eye, and although you didn't really
+        look at it, you don't think anything is wrong. <br />
+        Do you <show paragraph="ignore" id="1"> ignore</show> your copilot's concerns or <show paragraph="check" id="2">check</show>?
+      </p>
+
+      <paragraph id="ignore">
+        {{story.disable('1');}}
+        {{story.disable('2');}}
+        <p>
+          You say to your copilot,<br />
+          "Nah, it's fine. Don't worry about it."<br />
+          Your copilot, in a softer and harder to hear tone says,<br />
+          "I don't think it's right. Ehh, maybe it is? I don't know. I don't think so."<br />
+          Do you <show paragraph="ignoreAgain" id="3">ignore</show> his concerns again, or do you <show paragraph="check" id='4'>check</show>?
+        </p>
+      </paragraph>
+
+      <paragraph id="ignoreAgain">
+        {{story.disable('3');}}
+        {{story.disable('4');}}
+        <p>
+          "It's alright" you say to your copilot and continue. <br />
+          The trip over the runway is unusually rocky and uncomfortable as the airplane picks up speed.<br />
+          The airplane reaches the necessary speed and finally starts lifting off, slowly ascending.<br />
+          <turn to="badEnding">Next</turn>
+        </p>
+      </paragraph>
+
+      <paragraph id="check">
+        {{story.disable('1');}}
+        {{story.disable('2');}}
+        {{story.disable('3');}}
+        {{story.disable('4');}}
+        <p>
+          You decide to listen to your copilot and give the instrument panel a look.
+          Looking at it, the readings really do look weird. Quickly, you slow down the airplane
+          in order to stop it from taking off. You notify Air Traffic Control something is wrong,
+          and turn your airplane around.<br />
+          <turn to="goodEnding">Next</turn>
+        </p>
+      </paragraph>
+    </page>
+
+    <page id="goodEnding">
+      <center>
+        <img src="images/airplaneDeice.jpg" height="250" />
+      </center>
+      <p>
+        Good job!<br />
+        You turned around, following standard procedures, and didn't ignore your copilot completely!
+        Your plane was thoroughly deiced, and although it was delayed even further and you had to face the onslaught
+        of the angry passengers, you made the responsible decision! During the deicing, you also discover an equipment failure
+        due to you not turning on the airplane deicing, causing some of the sensors to behave improperly. Your actions have
+        saved you, your crew and the passengers from a terrible potential accident. You should be proud of yourself!
+      </p>
+      <p>
+        A similar situation was faced by Air Florida Flight 90 on January 13, 1982.<br /> <turn to="AirFlorida">Here's</turn> what happened.
+      </p>
+    </page>
+
+    <page id="badEnding">
+      <center>
+        <img src="images/planeCrash.jpg" />
+      </center>
+      <p>
+        The airplane ascends a few hundred feet. You're relieved you're finally in the air. Now you can be home soon.<br />
+        All of a sudden after a few seconds after takeoff, the stick shaker and alarm go off, indicating that the airplane is in danger of stalling.<br />
+        You and your copilot try to get the airplane to start climbing and to get out of the stall.<br />
+        But despite your efforts, you can't prevent it. The airplane starts stalling and falling!<br />
+        There's nothing you can do! Your airplane continues falling and crashes into a bridge below.<br />
+        You, everyone on board, and a few motorists unfortunate to be on the bridge die and many other motorists on the bridge are injured.<br />
+        The decisions you have made throughout this flight, such as ignoring standard procedures and your copilot, have lead to this unfortunate accident.<br />
+        Now you won't even be able to get back under that warm Florida sun!
+      </p>
+      <p>
+        A similar situation was faced by Air Florida Flight 90 on January 13, 1982.<br /> <turn to="AirFlorida">Here's</turn> what happened.
+      </p>
     </page>
 
 
