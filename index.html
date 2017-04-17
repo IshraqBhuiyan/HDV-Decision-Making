@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Air Florida Flight 90</title>
-  <script src="http://olado.github.io/doT/doT.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="https://olado.github.io/doT/doT.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="dedalus.js"></script>
   <script src="dedalus-web.js"></script>
 
-  <link rel="stylesheet" href="themes/nix/story.css">
+  <link rel="stylesheet" href="themes/thewriter/story.css">
 
 </head>
 
@@ -39,20 +39,30 @@
     <title>Another Day As A Pilot</title>
     <page id="intro">
       Hello
+      <p>
+        <img src="http://www.pngmart.com/files/3/Airplane-PNG-Photos.png" height="400"></img>
+      </p>
     </page>
-    
+    <page id="Hello" class="first">
+      Hello again friend.
+      <p> <turn to="thing">Next</turn></p>
+    </page>
+    <page id="thing">
+      New page!
+    </page>
+
   </div>
 
   <div id="wrapper">
     <div id="title"></div>
-    <div id="inventoryHostWrapper">
+    <div id="inventoryHostWrapper" style="display: none;">
         <h2>Inventory</h2>
         <div id="inventoryHost"></div>
     </div>
     <div id="host"></div>
   </div>
 
-  <div id="interactionHost"></div>
+  <div id="interactionHost" style="display: none;"></div>
 
   <div id="undoStageHost"></div>
 
