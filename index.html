@@ -8,13 +8,15 @@
   <script src="dedalus.js"></script>
   <script src="dedalus-web.js"></script>
 
-  <link rel="stylesheet" href="themes/nix/story.css">
+  <link rel="stylesheet" href="themes/thewriter/story.css">
 
 </head>
 
 <body>
   <div id="story">
+
     <initscript>
+      story.doneTalk = false;
     </initscript>
 
     <beforeEveryThing>
@@ -36,20 +38,61 @@
     </afterEveryParagraphShown>
 
     <!-- Story Begin-->
-    <title>Another Day As A Pilot</title>
+    <title>Fateful Flight</title>
+
     <page id="intro">
-      Hello
-      <p>
-        <img src="http://www.pngmart.com/files/3/Airplane-PNG-Photos.png" height="400"></img>
-      </p>
+      <h2> HDV 102 Decision Making</h2>
+      <h3> A project by Chia Chen, Ishraq Bhuiyan, Fangzhou Yu, Sean Fang and Gordon Wang</h3>
     </page>
-    <page id="Hello" class="first">
-      Hello again friend.
-      <p> <turn to="thing">Next</turn></p>
+
+    <page id="Start" class="first">
+      <img src="img/Airplane.png" height="250"></img>
+      <p> Your name is Ronald McDonald and you are a pilot. Today you are the Captain of Disunited Airlines Flight 91 from New York to Florida.</p>
+      Here is the story of one fateful day for you.
+      <p> <turn to="blizzard">Next</turn></p>
     </page>
-    <page id="thing">
-      New page!
+
+    <page id="blizzard">
+      <center>
+        <img src="img/airportSnow.jpg" height="300" />
+      </center>
+      Heavy snow temporarily closed the airport, but now it's finally open again.
+      I really want to get out of this frozen hell and be back under the warm Florida Sun.
+      I haven't seen my family in so long too. I'd really like to get back as fast as possible.
+      Well, it's time to <turn to="cockpit">go</turn> to my airplane.
+
     </page>
+
+    <page id="cockpit">
+      <center><img src="img/737Cockpit.jpg" height="250"></img></center>
+      I arrive in the cockpit of the Boeing 737 assigned to you with my copilot.<br>
+      I begin the preflight <show paragraph="checks">checks</show>.
+
+      <paragraph id="checks">
+        Me: Engines?<br>
+        Copilot: Check.<br>
+        Me: Fuel?<br />
+        Copilot: Check.<br />
+        Me: Tire Pressure?<br />
+        Copilot: Check.<br /><br />
+        Have they <show paragraph="deicing">deiced</show> the plane yet?
+      </paragraph>
+
+      <paragraph id="deicing">
+        It seems that the airport deicing crew is tending to it right now. It should be done within 15 to 20 minutes.
+        <br /><br />
+        The weather outside is gradually worsening. If we don't take off soon, we may get grounded again.
+        I really want to get back to Florida and have some time with my family before my next flight.
+        I rarely see them nowadays. The passengers are also extremely tired and anxious.
+        I don't want to be the one telling them we can't take off and then listen to their complaints.
+
+
+      </paragraph>
+
+
+
+    </page>
+
 
   </div>
 
