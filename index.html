@@ -16,6 +16,7 @@
   <div id="story">
 
     <initscript>
+      story.s = new Audio();
       story.doneTalk = false;
     </initscript>
 
@@ -23,6 +24,10 @@
     </beforeEveryThing>
 
     <beforeEveryPageTurn>
+      if(!story.currentPageIs('Start')){
+        story.s.pause();
+        story.s.loop = false;
+      }
     </beforeEveryPageTurn>
 
     <beforeEveryParagraphShown>
@@ -32,6 +37,30 @@
     </afterEveryThing>
 
     <afterEveryPageTurn>
+      if(story.currentPageIs('blizzard')){
+        story.s.src = 'audio/blizzard.wav';
+        story.s.play();
+        story.s.loop = true;
+      }
+      if(story.currentPageIs('taxi')){
+        story.s.src='audio/jet.mp3';
+        story.s.play();
+        story.s.loop = true;
+      }
+      if(story.currentPageIs('takeoff')){
+        story.s.src='audio/takeoffShort.wav';
+        story.s.play();
+      }
+      if(story.currentPageIs('goodEnding')){
+        story.s.src='audio/hose.wav';
+        story.s.play();
+        story.s.loop = true;
+      }
+      if(story.currentPageIs('badEnding')){
+        story.s.src='audio/fullCrash.wav';
+        story.s.play();
+        //story.s.ended = 'new Audio('crash.flac').play();';
+      }
     </afterEveryPageTurn>
 
     <afterEveryParagraphShown>
@@ -53,6 +82,7 @@
     </page>
 
     <page id="blizzard">
+      <audio src="audio/blizzard.wav"></audio>
       <center>
         <img src="images/airportSnow.jpg" height="300" />
       </center>
